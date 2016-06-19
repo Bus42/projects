@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+clear;
+echo "Please choose a character";
+#
+echo "1. Gnu";
+echo "2. Beavis";
+echo "3. Daemon";
+echo "4. Dragon";
+echo "5. Cow hitting a bong";
+echo "6. Ren";
+echo "7. Stimpy";
+echo "8. Sodomized Sheep";
+echo "9. Calvin";
+echo "0. Skeleton";
+#
+read char;
+#
+case $char in
+    "1") file=gnu.cow;;
+    "2") file=beavis.zen.cow;;
+    "3") file=daemon.cow;;
+    "4") file=dragon.cow;;
+    "5") file=bong.cow;;
+    "6") file=ren.cow;;
+    "7") file=stimpy.cow;;
+    "8") file=sodomized-sheep.cow;;
+    "9") file=calvin.cow;;
+    "0") file=skeleton.cow;;
+    *) clear; charsay;
+esac
+#
+echo "Choose what you would like your messenger to say, or just type [fortune] to hear your fortune.";
+read text;
+#
+if [ $text="fortune" ]; then
+    clear; fortune | cowsay -f /usr/share/cowsay/cows/$file;
+else
+    clear; cowsay -f /usr/share/cowsay/cows/$file $text;
+fi
+#
+# End of file
